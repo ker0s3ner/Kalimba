@@ -1,0 +1,15 @@
+{
+  "name": "freebuff-client",
+  "version": "1.0.0",
+  "description": "Minecraft utility client with base-hunting and module UI inspired by InertiaClient, RusherHack, and LiquidBounce/GrimClient",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build src/client/index.ts --outdir dist",
+    "dev": "bun run src/client/index.ts",
+    "test": "echo 'No tests yet'"
+  },
+  "keywords": ["minecraft", "client", "utility", "base-hunting", "modules"],
+  "author": "Freebuff",
+  "license": "MIT",
+  "dependencies": {}
+}
