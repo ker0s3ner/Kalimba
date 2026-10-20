@@ -153,7 +153,7 @@ object CommandLocalConfig : CommandRegistrar {
                     optional("overwrite", BooleanArgumentType("overwrite"), default = null) { overwrite ->
                         optional(
                             "include",
-                            MultiTaggedArgumentType("include", listOf("binds", "hidden", "render", "fun")) { it },
+                            MultiTaggedArgumentType("include", listOf("binds", "hidden", "render")) { it },
                             default = null,
                         ) { include ->
                             exec { ctx ->
@@ -191,7 +191,6 @@ object CommandLocalConfig : CommandRegistrar {
 
         val inclusions = enumSetOf<OptionalInclusion>()
         if (include.contains("render")) inclusions.add(OptionalInclusion.RENDER)
-        if (include.contains("fun")) inclusions.add(OptionalInclusion.FUN)
 
         val includeConfiguration = IncludeConfiguration(
             includeBinds = include.contains("binds"),

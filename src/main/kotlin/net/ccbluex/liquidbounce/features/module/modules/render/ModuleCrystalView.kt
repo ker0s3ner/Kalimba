@@ -32,7 +32,7 @@ import net.ccbluex.liquidbounce.injection.mixins.minecraft.render.entity.MixinEn
  *
  * @author ccetl
  */
-object ModuleCrystalView : ClientModule("CrystalView", ModuleCategories.RENDER) {
+object ModuleCrystalView : ClientModule("CrystalView", ModuleCategories.CPVP) {
 
     val size by float("Size", 0.3f, 0.1f..1.5f)
     val yTranslate by float("YTranslate", -0.5f, -2f..2f)

@@ -47,7 +47,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
  * Ignite: Automatically sets targets around you on fire.
  * AutoWeb: Automatically places cobwebs at targets around you.
  */
-object ModuleAutoTrap : ClientModule("AutoTrap", ModuleCategories.WORLD, aliases = listOf("Ignite", "AutoWeb")) {
+object ModuleAutoTrap : ClientModule("AutoTrap", ModuleCategories.CPVP, aliases = listOf("Ignite", "AutoWeb")) {
 
     private val range = floatRange("Range", 3.0f..4.5f, 2f..6f)
     private val delay by int("Delay", 20, 0..400, "ticks")

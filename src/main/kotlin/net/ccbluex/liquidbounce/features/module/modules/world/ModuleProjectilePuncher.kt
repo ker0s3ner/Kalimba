@@ -50,7 +50,7 @@ import net.minecraft.world.entity.projectile.hurtingprojectile.LargeFireball
  */
 object ModuleProjectilePuncher : ClientModule(
     "ProjectilePuncher",
-    ModuleCategories.WORLD,
+    ModuleCategories.PLAYER,
     aliases = listOf("AntiFireball")
 ) {
 

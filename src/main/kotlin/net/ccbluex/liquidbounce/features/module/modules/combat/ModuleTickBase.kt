@@ -47,7 +47,7 @@ import kotlin.math.min
  *
  * Calls tick function to speed up, when needed
  */
-internal object ModuleTickBase : ClientModule("TickBase", ModuleCategories.COMBAT) {
+internal object ModuleTickBase : ClientModule("TickBase", ModuleCategories.PVP) {
 
     private val mode by enumChoice("Mode", TickBaseMode.PAST)
         .apply { tagBy(this) }

@@ -31,7 +31,7 @@ import net.ccbluex.liquidbounce.utils.entity.handItems
 import net.ccbluex.liquidbounce.utils.kotlin.Priority
 import net.ccbluex.liquidbounce.utils.render.trajectory.HeldItemTrajectoryResolver
 
-object ModuleProjectileAimbot : ClientModule("ProjectileAimbot", ModuleCategories.COMBAT) {
+object ModuleProjectileAimbot : ClientModule("ProjectileAimbot", ModuleCategories.PVP) {
 
     private val targetSelector = TargetSelector()
     private val rotations = RotationsValueGroup(this)

@@ -1,79 +1,61 @@
-<div align="center">
-<p>
-    <img width="200" src="https://raw.githubusercontent.com/CCBlueX/LiquidCloud/master/LiquidBounce/liquidbounceLogo.svg">
-</p>
+# Kalimba
 
-[Website](https://liquidbounce.net) |
-[Forum](https://forums.ccbluex.net) |
-[Discord](https://liquidbounce.net/discord) |
-[YouTube](https://youtube.com/CCBlueX) |
-[X](https://x.com/CCBlueX)
-</div>
+A Minecraft utility client built for anarchy servers, with base hunting as its focus.
+Kalimba is a fork of [LiquidBounce](https://github.com/CCBlueX/LiquidBounce) (Fabric, Kotlin) and keeps its
+GPL-3.0 license. Older server versions (1.8 and up) are reachable through the bundled ViaFabricPlus.
 
-LiquidBounce is a free and open-source mixin-based injection hacked client using the Fabric API for Minecraft.
+## Modules
 
-## Issues
+Modules are grouped into sections in the ClickGUI:
 
-If you notice any bugs or missing features, you can let us know by opening an
-issue [here](https://github.com/CCBlueX/LiquidBounce/issues).
+| Section  | What is in it |
+|----------|---------------|
+| PvP      | KillAura, Aimbot, AutoClicker, Criticals, Velocity, Backtrack, Hitbox, KeepSprint and other melee/bow combat modules |
+| CPvP     | CrystalAura, CrystalView, HoleFiller, HoleESP, Surround, BlockIn, BlockTrap, AutoTrap, BedDefender |
+| Combat   | AutoArmor, AutoLeave, AutoDodge, AutoPearl and other combat helpers |
+| World    | **Base hunting:** BaseFinder, NewChunks, StorageESP, XRay, BlockESP, Breadcrumbs, LogoffSpot, StrongholdFinder, VoidESP |
+| Player   | Scaffold, Nuker, PacketMine, AutoTool, AutoFarm, ChestStealer and other building/mining/inventory modules |
+| Movement | Flight, Speed, ElytraFly, NoFall and friends |
+| Render   | ESP, Nametags, FullBright, Zoom, HUD and other visuals |
+| Misc / Exploit | Everything else |
+
+The Fun category (Derp, Twerk, Notebot, ...) has been removed.
+
+### Base hunting
+
+- **BaseFinder** scans every chunk the server sends and logs chunks whose storage, spawner, hopper or skull
+  counts pass your thresholds. It can require chests so natural dungeons are skipped, censor coordinates in chat,
+  and writes hits to `kalimba/basefinder.log`.
+- **NewChunks** highlights freshly generated chunks (fluid flow updates), which is how trails and old
+  player-made terrain are told apart.
+- **StorageESP**, **XRay**, **Breadcrumbs** and **LogoffSpot** cover the rest of the search loop.
+
+### Server-aware behaviour
+
+- **PvP modules ignore what the server will not let you hit.** Targets that are NPCs/bots (no tab-list entry or
+  flagged by AntiBot), invulnerable players, or anyone while you are in a no-PvP zone, adventure mode or spectator
+  are skipped. No-PvP zones are detected from server messages and re-checked every few seconds.
+- **Mining modules pause where the server refuses block breaking** (Nuker, PacketMine, Fucker). If the server puts a
+  broken block back repeatedly, or says you are not allowed to break here, mining stops and only a single test
+  break is attempted every few seconds until the server lets you through again.
+
+## Building
+
+Requires JDK 25.
+
+```bash
+./gradlew build
+```
+
+The jar is written to `build/libs/`. GitHub Actions builds every push and pull request to `main` and uploads the jar
+as a build artifact; published releases get the jar attached.
+
+## Theme
+
+The ClickGUI uses a warm wood palette (walnut surfaces, amber accents). Colours live in
+[`src-theme/src/colors.scss`](src-theme/src/colors.scss).
 
 ## License
 
-This project is subject to the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). This
-does only apply for source code located directly in this clean repository. During the development and compilation
-process, additional source code may be used to which we have obtained no rights. Such code is not covered by the GPL
-license.
-
-For those who are unfamiliar with the license, here is a summary of its main points. This is by no means legal advice
-nor legally binding.
-
-*Actions that you are allowed to do:*
-
-- Use
-- Share
-- Modify
-
-*If you do decide to use ANY code from the source:*
-
-- **You must disclose the source code of your modified work and the source code you took from this project. This means
-  you are not allowed to use code from this project (even partially) in a closed-source (or even obfuscated)
-  application.**
-- **Your modified application must also be licensed under the GPL**
-
-## Setting up a Workspace
-
-LiquidBounce uses Gradle; to make sure that it is installed properly, you can
-check [Gradle's website](https://gradle.org/install/). It also requires [Node.js](https://nodejs.org) to be installed for
-our [theme](https://github.com/CCBlueX/LiquidBounce/tree/nextgen/src-theme).
-
-1. Clone the repository using `git clone --recurse-submodules https://github.com/CCBlueX/LiquidBounce`.
-2. CD into the local repository. (`cd LiquidBounce`)
-3. Run `./gradlew genSources` for better development experience (Optional).
-4. Open the folder as a Gradle project in your preferred IDE.
-5. Run the client. (`./gradlew runClient`)
-
-## Additional libraries
-
-### Mixins
-
-Mixins can be used to modify classes at runtime before they are loaded. LiquidBounce uses it to inject its code into the
-Minecraft client. This way, none of Mojang's copyrighted code is shipped. If you want to learn more about it, check out
-its [Documentation](https://docs.spongepowered.org/5.1.0/en/plugin/internals/mixins.html).
-
-## Contributing
-
-We appreciate contributions. So if you want to support us, feel free to make changes to LiquidBounce's source code and
-submit a pull request.
-
-## Stats
-
-![Alt](https://repobeats.axiom.co/api/embed/ad3a9161793c4dfe50934cd4442d25dc3ca93128.svg "Repobeats analytics image")
-
-## Imprint
-
-**CCBlueX**  
-Vahrenwalder Str. 269A
-30179 Hanover
-Germany
-
-**Owner and responsible for the content:** Marco Beyer
+Kalimba is licensed under the [GNU General Public License v3.0](LICENSE). It is based on LiquidBounce by CCBlueX;
+see [NOTICE](NOTICE).

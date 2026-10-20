@@ -26,4 +26,4 @@ import net.ccbluex.liquidbounce.features.module.ModuleCategories
  *
  * Allows you to place blocks on liquids
  */
-object ModuleLiquidPlace : ClientModule("LiquidPlace", ModuleCategories.WORLD)
+object ModuleLiquidPlace : ClientModule("LiquidPlace", ModuleCategories.PLAYER)

@@ -31,7 +31,7 @@ import kotlin.math.ceil
 /**
  * Makes the mace powerful by faking fall height.
  */
-object ModuleMaceKill : ClientModule("MaceKill", ModuleCategories.COMBAT) {
+object ModuleMaceKill : ClientModule("MaceKill", ModuleCategories.PVP) {
 
     private val fallHeight by int("FallHeight", 22, 1..170).apply { tagBy(this) }
 

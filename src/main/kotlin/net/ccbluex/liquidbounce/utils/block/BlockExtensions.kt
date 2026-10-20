@@ -595,6 +595,8 @@ fun doBreak(
     immediate: Boolean = false,
     swingMode: SwingMode = SwingMode.DO_NOT_HIDE
 ) {
+    if (!net.ccbluex.liquidbounce.features.kalimba.MiningGuard.permits()) return
+
     val direction = rayTraceResult.direction
     val blockPos = rayTraceResult.blockPos
 

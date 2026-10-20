@@ -28,6 +28,12 @@ object ModuleCategories {
     private val registry = TreeMap<String, ModuleCategory>(String.CASE_INSENSITIVE_ORDER)
 
     @JvmField
+    val PVP = register(ModuleCategory("PvP"))
+
+    @JvmField
+    val CPVP = register(ModuleCategory("CPvP"))
+
+    @JvmField
     val COMBAT = register(ModuleCategory("Combat"))
 
     @JvmField
@@ -47,9 +53,6 @@ object ModuleCategories {
 
     @JvmField
     val EXPLOIT = register(ModuleCategory("Exploit"))
-
-    @JvmField
-    val FUN = register(ModuleCategory("Fun", inclusionGroup = OptionalInclusion.FUN))
 
     @JvmStatic
     val entries: Collection<ModuleCategory> get() = registry.sequencedValues()

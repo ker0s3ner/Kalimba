@@ -29,7 +29,7 @@ import net.ccbluex.liquidbounce.utils.kotlin.random
 /**
  * When hitting an entity, the player will keep sprinting
  */
-object ModuleKeepSprint : ClientModule("KeepSprint", ModuleCategories.COMBAT) {
+object ModuleKeepSprint : ClientModule("KeepSprint", ModuleCategories.PVP) {
     private val motion by floatRange("Motion", 100f..100f, 0f..100f, "%")
     private val motionWhenHurt by floatRange("MotionWhenHurt", 100f..100f, 0f..100f, "%")
     private val hurtTime by intRange("HurtTime", 1..10, 1..10)

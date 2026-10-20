@@ -179,7 +179,8 @@ fun Entity?.shouldBeShown(enemyConf: Set<Targets> = GlobalSettingsTarget.visual)
 @AddonApi
 @JvmOverloads
 fun Entity?.shouldBeAttacked(enemyConf: Set<Targets> = GlobalSettingsTarget.combat) =
-    this is Attackable && enemyConf.shouldAttack(this) && this.isWithinWorldBorder
+    this is Attackable && enemyConf.shouldAttack(this) && this.isWithinWorldBorder &&
+        !net.ccbluex.liquidbounce.features.kalimba.PvpGuard.shouldIgnore(this)
 
 /**
  * Mirrors the vanilla server-side invalid attack disconnect checks

@@ -61,6 +61,11 @@ object InstantNukerMode : Mode("Instant") {
             return@tickHandler
         }
 
+        if (!net.ccbluex.liquidbounce.features.kalimba.MiningGuard.permits()) {
+            waitTicks(1)
+            return@tickHandler
+        }
+
         for ((pos, _) in targets) {
             interaction.startPrediction(world) { sequence ->
                 ServerboundPlayerActionPacket(

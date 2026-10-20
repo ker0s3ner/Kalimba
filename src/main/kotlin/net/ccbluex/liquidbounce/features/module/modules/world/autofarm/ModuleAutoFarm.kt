@@ -70,7 +70,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
  *
  * Automatically farms stuff for you.
  */
-object ModuleAutoFarm : ClientModule("AutoFarm", ModuleCategories.WORLD) {
+object ModuleAutoFarm : ClientModule("AutoFarm", ModuleCategories.PLAYER) {
 
     private val range by float("Range", 5F, 1F..6F)
     private val wallRange by float("WallRange", 0f, 0F..6F).onChange {

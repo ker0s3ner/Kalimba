@@ -60,7 +60,7 @@ import kotlin.jvm.optionals.getOrNull
  * Holds back packets to prevent you from being hit by an enemy.
  */
 @Suppress("MagicNumber")
-object ModuleFakeLag : ClientModule("FakeLag", ModuleCategories.COMBAT) {
+object ModuleFakeLag : ClientModule("FakeLag", ModuleCategories.PVP) {
     private val range by floatRange("Range", 2f..5f, 0f..10f)
     private val delay by intRange("Delay", 300..600, 0..1000, "ms")
     private val recoilTime by int("RecoilTime", 250, 0..1000, "ms")

@@ -53,7 +53,7 @@ import kotlin.math.min
  * @author ccetl
  */
 @Suppress("MagicNumber")
-object ModuleBlockTrap : ClientModule("BlockTrap", ModuleCategories.WORLD) {
+object ModuleBlockTrap : ClientModule("BlockTrap", ModuleCategories.CPVP) {
 
     private val doublePlace by multiEnumChoice<DoublePlace>("DoublePlace")
 

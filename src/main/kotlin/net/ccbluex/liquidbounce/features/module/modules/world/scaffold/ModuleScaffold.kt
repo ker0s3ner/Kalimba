@@ -117,7 +117,7 @@ import kotlin.math.abs
  * Places blocks under you.
  */
 @Suppress("TooManyFunctions")
-object ModuleScaffold : ClientModule("Scaffold", ModuleCategories.WORLD) {
+object ModuleScaffold : ClientModule("Scaffold", ModuleCategories.PLAYER) {
 
     private val delay by intRange("Delay", 0..0, 0..40, "ticks")
     private val minDist by float("MinDist", 0.0f, 0.0f..0.25f)

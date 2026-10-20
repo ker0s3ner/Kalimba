@@ -28,7 +28,7 @@ import kotlin.math.max
  *
  * Reduces or removes entity interpolation ticks
  */
-object ModuleNoInterpolation : ClientModule("NoInterpolation", ModuleCategories.WORLD) {
+object ModuleNoInterpolation : ClientModule("NoInterpolation", ModuleCategories.PLAYER) {
 
     private val value by int("ReduceBy", 3, 1..3)
 

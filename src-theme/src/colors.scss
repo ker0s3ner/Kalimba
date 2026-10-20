@@ -1,18 +1,18 @@
 :root {
   /* Foundation */
-  --surface-color: #000000;
-  --text-color: #ffffff;
-  --text-dimmed-color: #d3d3d3;
+  --surface-color: #1e130b;
+  --text-color: #f3e6d0;
+  --text-dimmed-color: #c2a98a;
 
-  --accent-color: #4677ff;
+  --accent-color: #d9923b;
   --accent-hover-color: color-mix(in srgb, var(--accent-color) 82%, black);
   --accent-subtle-background-color: color-mix(in srgb, var(--accent-color) 12%, transparent);
 
-  --success-color: #4dac68;
-  --error-color: #fc4130;
-  --premium-color: #67d24a;
-  --warning-color: #efbf04;
-  --grid-color: color-mix(in srgb, #808080 25%, transparent);
+  --success-color: #8fae5a;
+  --error-color: #d4553a;
+  --premium-color: #e3b453;
+  --warning-color: #f0c05a;
+  --grid-color: color-mix(in srgb, #8a5a2b 25%, transparent);
 
   /* ClickGUI */
   --clickgui-base-color: var(--surface-color);
@@ -301,7 +301,7 @@
   --animated-logo-glow-primary-color: color-mix(in srgb, var(--accent-color) 22%, transparent);
   --animated-logo-glow-secondary-color: color-mix(in srgb, var(--error-color) 12%, transparent);
 
-  --confetti-color-1: #4677ff;
+  --confetti-color-1: #d9923b;
   --confetti-color-2: #fc4130;
   --confetti-color-3: #67d24a;
   --confetti-color-4: #ffd166;

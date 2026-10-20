@@ -45,7 +45,7 @@ import java.util.UUID
  *
  * Creates a fake player entity when a player logs off.
  */
-object ModuleLogoffSpot : ClientModule("LogoffSpot", ModuleCategories.RENDER) {
+object ModuleLogoffSpot : ClientModule("LogoffSpot", ModuleCategories.WORLD) {
 
     private val enableSendInChat by boolean("SendInChat", default = true)
 

@@ -53,7 +53,7 @@ import java.util.function.BiPredicate
  *
  * Automatically chooses the best tool in your inventory to mine a block.
  */
-object ModuleAutoTool : ClientModule("AutoTool", ModuleCategories.WORLD) {
+object ModuleAutoTool : ClientModule("AutoTool", ModuleCategories.PLAYER) {
     val toolSelector =
         choices(
             "ToolSelector",

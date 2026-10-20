@@ -55,7 +55,7 @@ import net.minecraft.world.item.enchantment.Enchantments
  *
  * Automatically selects the best weapon in your hotbar
  */
-object ModuleAutoWeapon : ClientModule("AutoWeapon", ModuleCategories.COMBAT) {
+object ModuleAutoWeapon : ClientModule("AutoWeapon", ModuleCategories.PVP) {
 
     /**
      * The weapon type to prefer, which on 1.8 and 1.9+ versions is usually a sword,

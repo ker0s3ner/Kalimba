@@ -33,7 +33,7 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.Vec3
 
-object ModuleDroneControl : ClientModule("DroneControl", ModuleCategories.COMBAT) {
+object ModuleDroneControl : ClientModule("DroneControl", ModuleCategories.PVP) {
 
     private val rotations = tree(RotationsValueGroup(this))
 

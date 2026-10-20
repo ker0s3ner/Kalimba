@@ -37,7 +37,7 @@ import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket
  * Automatically speeds up when you are near an enemy.
  */
 
-object ModuleTimerRange : ClientModule("TimerRange", ModuleCategories.COMBAT) {
+object ModuleTimerRange : ClientModule("TimerRange", ModuleCategories.PVP) {
 
     private val chance = percentageChance("Chance", 100f)
     private val timerBalanceLimit by float("TimerBalanceLimit", 20f, 0f..50f)

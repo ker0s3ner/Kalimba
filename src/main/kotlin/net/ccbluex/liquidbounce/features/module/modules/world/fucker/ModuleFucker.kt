@@ -86,7 +86,7 @@ import kotlin.math.max
 @Suppress("TooManyFunctions")
 object ModuleFucker : ClientModule(
     "Fucker",
-    ModuleCategories.WORLD,
+    ModuleCategories.PLAYER,
     aliases = listOf("BedBreaker", "IdNuker"),
 ), BreakingProgress.Provider {
 

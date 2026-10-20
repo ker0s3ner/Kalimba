@@ -43,7 +43,7 @@ import kotlin.math.ceil
  *
  * Changes the speed of the entire game.
  */
-object ModuleTimer : ClientModule("Timer", ModuleCategories.WORLD, disableOnQuit = true) {
+object ModuleTimer : ClientModule("Timer", ModuleCategories.PLAYER, disableOnQuit = true) {
 
     val modes = choices("Mode", Classic, arrayOf(Classic, Pulse, Boost)).apply { tagBy(this) }
 

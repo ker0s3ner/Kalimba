@@ -45,7 +45,7 @@ import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket
  *
  * Command: [CommandAutoDisable]
  */
-object ModuleAutoDisable : ClientModule("AutoDisable", ModuleCategories.WORLD) {
+object ModuleAutoDisable : ClientModule("AutoDisable", ModuleCategories.PLAYER) {
     val modules: Set<ClientModule>
         field: MutableSet<ClientModule> = ReferenceOpenHashSet()
 

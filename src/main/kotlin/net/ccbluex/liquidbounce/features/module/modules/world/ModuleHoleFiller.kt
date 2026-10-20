@@ -55,7 +55,7 @@ import kotlin.math.max
  *
  * @author ccetl
  */
-object ModuleHoleFiller : ClientModule("HoleFiller", ModuleCategories.WORLD), HoleManagerSubscriber {
+object ModuleHoleFiller : ClientModule("HoleFiller", ModuleCategories.CPVP), HoleManagerSubscriber {
 
     private val features by multiEnumChoice("Features",
         Features.SMART,

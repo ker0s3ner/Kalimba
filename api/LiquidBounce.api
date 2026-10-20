@@ -754,6 +754,22 @@ public final class net/ccbluex/liquidbounce/features/global/GlobalSettingsAutoTr
 	public fun onTick (Ljava/lang/Runnable;)Ljava/lang/AutoCloseable;
 }
 
+public final class net/ccbluex/liquidbounce/features/kalimba/MiningGuard : net/ccbluex/liquidbounce/event/EventListener {
+	public fun after (ILjava/lang/Runnable;)Ljava/lang/AutoCloseable;
+	public fun every (ILjava/lang/Runnable;)Ljava/lang/AutoCloseable;
+	public fun on (Ljava/lang/Class;Ljava/util/function/Consumer;)Ljava/lang/AutoCloseable;
+	public fun on (Ljava/lang/Class;SLjava/util/function/Consumer;)Ljava/lang/AutoCloseable;
+	public fun onTick (Ljava/lang/Runnable;)Ljava/lang/AutoCloseable;
+}
+
+public final class net/ccbluex/liquidbounce/features/kalimba/PvpGuard : net/ccbluex/liquidbounce/event/EventListener {
+	public fun after (ILjava/lang/Runnable;)Ljava/lang/AutoCloseable;
+	public fun every (ILjava/lang/Runnable;)Ljava/lang/AutoCloseable;
+	public fun on (Ljava/lang/Class;Ljava/util/function/Consumer;)Ljava/lang/AutoCloseable;
+	public fun on (Ljava/lang/Class;SLjava/util/function/Consumer;)Ljava/lang/AutoCloseable;
+	public fun onTick (Ljava/lang/Runnable;)Ljava/lang/AutoCloseable;
+}
+
 public abstract interface class net/ccbluex/liquidbounce/features/marketplace/MarketplaceItemHandler {
 	public abstract fun reload (Ljava/util/List;)V
 }
@@ -878,12 +894,13 @@ public final class net/ccbluex/liquidbounce/features/module/MinecraftShortcuts$D
 
 public final class net/ccbluex/liquidbounce/features/module/ModuleCategories {
 	public static final field COMBAT Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
+	public static final field CPVP Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field EXPLOIT Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
-	public static final field FUN Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field INSTANCE Lnet/ccbluex/liquidbounce/features/module/ModuleCategories;
 	public static final field MISC Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field MOVEMENT Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field PLAYER Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
+	public static final field PVP Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field RENDER Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final field WORLD Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;
 	public static final fun byName (Ljava/lang/String;)Lnet/ccbluex/liquidbounce/features/module/ModuleCategory;

@@ -72,7 +72,7 @@ import java.util.function.BooleanSupplier
 /**
  * Auto use fishing rod for combat.
  */
-object ModuleAutoRod : ClientModule("AutoRod", ModuleCategories.COMBAT) {
+object ModuleAutoRod : ClientModule("AutoRod", ModuleCategories.PVP) {
 
     private val gravityType by enumChoice("GravityType", GravityType.LINEAR)
     private val range by floatRange("Range", 3.5f..5f, 2f..10f)

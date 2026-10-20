@@ -57,7 +57,7 @@ import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.phys.Vec3
 
-object ModuleBacktrack : ClientModule("Backtrack", ModuleCategories.COMBAT) {
+object ModuleBacktrack : ClientModule("Backtrack", ModuleCategories.PVP) {
 
     private val range by floatRange("Range", 1f..3f, 0f..10f)
     val delay by intRange("Delay", 100..150, 0..1000, "ms")

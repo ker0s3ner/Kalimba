@@ -34,7 +34,7 @@ import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket
  *
  * Allows you to break blocks faster.
  */
-object ModuleFastBreak : ClientModule("FastBreak", ModuleCategories.WORLD) {
+object ModuleFastBreak : ClientModule("FastBreak", ModuleCategories.PLAYER) {
 
     private const val VANILLA_DESTROY_DELAY = 5
 

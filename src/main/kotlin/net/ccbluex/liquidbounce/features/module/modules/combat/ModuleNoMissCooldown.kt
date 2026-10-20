@@ -22,7 +22,7 @@ package net.ccbluex.liquidbounce.features.module.modules.combat
 import net.ccbluex.liquidbounce.features.module.ClientModule
 import net.ccbluex.liquidbounce.features.module.ModuleCategories
 
-object ModuleNoMissCooldown : ClientModule("NoMissCooldown", ModuleCategories.COMBAT) {
+object ModuleNoMissCooldown : ClientModule("NoMissCooldown", ModuleCategories.PVP) {
 
     /**
      * Disables the miss-cooldown of 10 ticks when missing an attack.

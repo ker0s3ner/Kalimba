@@ -33,7 +33,7 @@ import java.util.Random
  * Automatically shoots with your bow when it's fully charged
  *  + and make it possible to shoot faster
  */
-object ModuleAutoBow : ClientModule("AutoBow", ModuleCategories.COMBAT, aliases = listOf("BowAssist", "BowAimbot")) {
+object ModuleAutoBow : ClientModule("AutoBow", ModuleCategories.PVP, aliases = listOf("BowAssist", "BowAimbot")) {
     val random = Random()
 
     /**

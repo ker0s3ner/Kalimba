@@ -27,7 +27,7 @@ import net.ccbluex.liquidbounce.features.module.ModuleCategories
  *
  * Automatically adjusts breaking speed when in negatively affecting situations.
  */
-object ModuleNoSlowBreak : ClientModule("NoSlowBreak", ModuleCategories.WORLD) {
+object ModuleNoSlowBreak : ClientModule("NoSlowBreak", ModuleCategories.PLAYER) {
     @Suppress("ObjectPropertyNaming")
     private val `when` by multiEnumChoice("When",
         When.MINING_FATIGUE,

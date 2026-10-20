@@ -123,7 +123,7 @@ import java.util.function.Consumer
  * Command: [CommandXRay]
  */
 @Suppress("TooManyFunctions")
-object ModuleXRay : ClientModule("XRay", ModuleCategories.RENDER) {
+object ModuleXRay : ClientModule("XRay", ModuleCategories.WORLD) {
 
     @Suppress("UNUSED_PARAMETER")
     private val valueChangedReload = Consumer<Any?> {

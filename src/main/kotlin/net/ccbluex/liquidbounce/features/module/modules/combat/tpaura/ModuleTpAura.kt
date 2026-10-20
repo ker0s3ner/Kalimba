@@ -40,7 +40,7 @@ import net.ccbluex.liquidbounce.utils.entity.squaredBoxedDistanceTo
 import net.ccbluex.liquidbounce.utils.render.WireframePlayer
 import net.minecraft.world.phys.Vec3
 
-object ModuleTpAura : ClientModule("TpAura", ModuleCategories.COMBAT, disableOnQuit = true) {
+object ModuleTpAura : ClientModule("TpAura", ModuleCategories.PVP, disableOnQuit = true) {
 
     private val attackRange by float("AttackRange", 4.2f, 3f..5f)
 

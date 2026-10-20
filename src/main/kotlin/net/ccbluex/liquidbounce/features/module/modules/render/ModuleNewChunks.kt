@@ -45,7 +45,7 @@ import kotlin.math.max
  *
  * Highlights chunks that are likely newly generated.
  */
-object ModuleNewChunks : ClientModule("NewChunks", ModuleCategories.RENDER) {
+object ModuleNewChunks : ClientModule("NewChunks", ModuleCategories.WORLD) {
 
     private val renderDistance by int("RenderDistance", 32, 4..128, "chunks")
     private val renderY by float("RenderY", 0.0f, -64.0f..320.0f)

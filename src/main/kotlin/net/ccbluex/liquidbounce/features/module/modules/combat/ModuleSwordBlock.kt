@@ -38,7 +38,7 @@ import net.minecraft.world.item.ShieldItem
 /**
  * This module allows the user to block with swords. This makes sense to be used on servers with ViaVersion.
  */
-object ModuleSwordBlock : ClientModule("SwordBlock", ModuleCategories.COMBAT, aliases = listOf("OldBlocking")) {
+object ModuleSwordBlock : ClientModule("SwordBlock", ModuleCategories.PVP, aliases = listOf("OldBlocking")) {
 
     val onlyVisual by boolean("OnlyVisual", false)
     val fakeOnPressing by boolean("FakeOnPressing", false).doNotIncludeAlways()

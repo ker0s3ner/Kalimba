@@ -23,6 +23,5 @@ package net.ccbluex.liquidbounce.config
  * Groups of settings that can be optionally included or excluded during configuration saving.
  */
 enum class OptionalInclusion {
-    RENDER,
-    FUN
+    RENDER
 }

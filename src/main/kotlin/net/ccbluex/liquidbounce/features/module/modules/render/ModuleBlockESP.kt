@@ -60,7 +60,7 @@ import java.util.function.Predicate
  * Allows you to see selected blocks through walls.
  */
 
-object ModuleBlockESP : ClientModule("BlockESP", ModuleCategories.RENDER) {
+object ModuleBlockESP : ClientModule("BlockESP", ModuleCategories.WORLD) {
 
     private val modes = choices("Mode", 0) {
         arrayOf(

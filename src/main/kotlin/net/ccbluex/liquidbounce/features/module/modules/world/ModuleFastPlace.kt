@@ -34,7 +34,7 @@ import java.util.function.Predicate
  *
  * Allows you to place blocks faster.
  */
-object ModuleFastPlace : ClientModule("FastPlace", ModuleCategories.WORLD) {
+object ModuleFastPlace : ClientModule("FastPlace", ModuleCategories.PLAYER) {
 
     private val cooldown by intRange("Cooldown", 0..0, 0..4, "ticks")
     private val applyTo by multiEnumChoice("ApplyTo", ApplyTo.entries)

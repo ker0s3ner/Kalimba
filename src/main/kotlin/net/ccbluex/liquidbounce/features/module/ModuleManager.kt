@@ -82,13 +82,6 @@ import net.ccbluex.liquidbounce.features.module.modules.exploit.disabler.ModuleD
 import net.ccbluex.liquidbounce.features.module.modules.exploit.dupe.ModuleDupe
 import net.ccbluex.liquidbounce.features.module.modules.exploit.phase.ModulePhase
 import net.ccbluex.liquidbounce.features.module.modules.exploit.servercrasher.ModuleServerCrasher
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleDankBobbing
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleDerp
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleHandDerp
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleSkinDerp
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleTwerk
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.ModuleVomit
-import net.ccbluex.liquidbounce.features.module.modules.`fun`.notebot.ModuleNotebot
 import net.ccbluex.liquidbounce.features.module.modules.misc.ModuleAntiCheatDetect
 import net.ccbluex.liquidbounce.features.module.modules.misc.ModuleAntiStaff
 import net.ccbluex.liquidbounce.features.module.modules.misc.ModuleAutoAccount
@@ -514,13 +507,6 @@ object ModuleManager : EventListener, Collection<ClientModule> by modules {
             ModuleYggdrasilSignatureFix,
 
             // Fun
-            ModuleDankBobbing,
-            ModuleDerp,
-            ModuleNotebot,
-            ModuleSkinDerp,
-            ModuleHandDerp,
-            ModuleTwerk,
-            ModuleVomit,
 
             // Misc
             ModuleAutoConfig,

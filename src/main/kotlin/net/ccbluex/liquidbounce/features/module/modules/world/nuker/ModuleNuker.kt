@@ -38,7 +38,7 @@ import net.minecraft.world.level.block.state.BlockState
  *
  * Destroys blocks around you.
  */
-object ModuleNuker : ClientModule("Nuker", ModuleCategories.WORLD, disableOnQuit = true), BreakingProgress.Provider {
+object ModuleNuker : ClientModule("Nuker", ModuleCategories.PLAYER, disableOnQuit = true), BreakingProgress.Provider {
 
     val mode =
         choices("Mode", LegitNukerMode, arrayOf(LegitNukerMode, InstantNukerMode))

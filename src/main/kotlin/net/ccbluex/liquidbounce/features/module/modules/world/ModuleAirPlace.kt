@@ -49,7 +49,7 @@ import net.minecraft.world.phys.BlockHitResult
  *
  * Allows you to place blocks in midair.
  */
-object ModuleAirPlace : ClientModule("AirPlace", ModuleCategories.WORLD) {
+object ModuleAirPlace : ClientModule("AirPlace", ModuleCategories.PLAYER) {
 
     private object Preview : ToggleableValueGroup(this, "Preview", true) {
         val outlineOnly by boolean("OutlineOnly", false)

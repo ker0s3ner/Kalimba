@@ -29,7 +29,6 @@ import net.ccbluex.liquidbounce.event.EventManager;
 import net.ccbluex.liquidbounce.event.events.GameRenderEvent;
 import net.ccbluex.liquidbounce.event.events.PerspectiveEvent;
 import net.ccbluex.liquidbounce.event.events.WorldRenderEvent;
-import net.ccbluex.liquidbounce.features.module.modules.fun.ModuleDankBobbing;
 import net.ccbluex.liquidbounce.features.module.modules.render.*;
 import net.ccbluex.liquidbounce.features.module.modules.render.customambience.ModuleCustomAmbience;
 import net.ccbluex.liquidbounce.render.engine.ItemChamsEffectRenderer;
@@ -207,23 +206,6 @@ public abstract class MixinGameRenderer {
             return;
         }
 
-        if (!ModuleDankBobbing.INSTANCE.getRunning()) {
-            return;
-        }
-
-        final var entityRenderState = cameraState.entityRenderState;
-        if (!entityRenderState.isPlayer) {
-            return;
-        }
-
-        float additionalBobbing = ModuleDankBobbing.INSTANCE.getMotion();
-        float g = entityRenderState.backwardsInterpolatedWalkDistance;
-        float h = entityRenderState.bob;
-        poseStack.translate(Mth.sin(g * Mth.PI) * h * 0.5f, -Math.abs(Mth.cos(g * Mth.PI) * h), 0.0f);
-        poseStack.rotate(Axis.ZP.rotationDegrees(Mth.sin(h * Mth.PI) * h * (3.0F + additionalBobbing)));
-        poseStack.rotate(Axis.XP.rotationDegrees(Math.abs(Mth.cos(h * Mth.PI - (0.2F + additionalBobbing)) * h) * 5.0F));
-
-        ci.cancel();
     }
 
     @ModifyExpressionValue(method = "renderLevel", at = @At(value = "INVOKE", target = "Ljava/lang/Math;max(FF)F", ordinal = 0, remap = false))

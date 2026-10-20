@@ -56,7 +56,7 @@ import kotlin.math.abs
  */
 object AutoMobHeal : ClientModule(
     "AutoMobHeal",
-    ModuleCategories.WORLD,
+    ModuleCategories.PLAYER,
     aliases = listOf("AutoGolemRepair"),
 ) {
 

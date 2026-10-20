@@ -65,7 +65,7 @@ import net.minecraft.world.item.SnowballItem
  *
  * @author 1zuna
  */
-object ModuleAutoShoot : ClientModule("AutoShoot", ModuleCategories.COMBAT) {
+object ModuleAutoShoot : ClientModule("AutoShoot", ModuleCategories.PVP) {
 
     private val throwableType = choices(
         "ThrowableType",

@@ -52,7 +52,7 @@ import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket
  * Modifies the amount of velocity you take.
  */
 
-object ModuleVelocity : ClientModule("Velocity", ModuleCategories.COMBAT, aliases = listOf("AntiKnockBack")) {
+object ModuleVelocity : ClientModule("Velocity", ModuleCategories.PVP, aliases = listOf("AntiKnockBack")) {
 
     val modes = choices(
         "Mode", VelocityModify, arrayOf(

@@ -36,7 +36,7 @@ import net.minecraft.world.entity.LivingEntity
  * @author sqlerrorthing
  */
 @Suppress("MagicNumber")
-object ModuleElytraTarget : ClientModule("ElytraTarget", ModuleCategories.COMBAT) {
+object ModuleElytraTarget : ClientModule("ElytraTarget", ModuleCategories.PVP) {
     private val targetTracker = tree(TargetTracker())
 
     init {

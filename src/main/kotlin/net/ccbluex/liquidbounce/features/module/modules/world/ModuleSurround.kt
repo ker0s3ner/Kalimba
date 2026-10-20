@@ -64,7 +64,7 @@ import kotlin.math.floor
  *
  * @author ccetl
  */
-object ModuleSurround : ClientModule("Surround", ModuleCategories.WORLD, disableOnQuit = true) {
+object ModuleSurround : ClientModule("Surround", ModuleCategories.CPVP, disableOnQuit = true) {
 
     /**
      * The blocks the surround normal utilizes.

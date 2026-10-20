@@ -46,7 +46,7 @@ import kotlin.math.max
  *
  * Detects and displays safe spots for Crystal PvP.
  */
-object ModuleHoleESP : ClientModule("HoleESP", ModuleCategories.RENDER), HoleManagerSubscriber {
+object ModuleHoleESP : ClientModule("HoleESP", ModuleCategories.CPVP), HoleManagerSubscriber {
 
     private val modes = choices("Mode", GlowingPlane, arrayOf(BoxMode, GlowingPlane))
 

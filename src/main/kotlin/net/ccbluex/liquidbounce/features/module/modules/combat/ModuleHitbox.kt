@@ -29,7 +29,7 @@ import net.ccbluex.liquidbounce.utils.combat.shouldBeAttacked
  *
  * Enlarges the hitbox of other entities.
  */
-object ModuleHitbox : ClientModule("Hitbox", ModuleCategories.COMBAT) {
+object ModuleHitbox : ClientModule("Hitbox", ModuleCategories.PVP) {
 
     val size by float("Size", 0.1f, 0f..1f).apply { tagBy(this) }
 

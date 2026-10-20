@@ -39,7 +39,7 @@ import net.minecraft.world.level.chunk.ChunkAccess
  * Highlight all surrounding positions that may be void.
  */
 
-object ModuleVoidESP : ClientModule("VoidESP", ModuleCategories.RENDER) {
+object ModuleVoidESP : ClientModule("VoidESP", ModuleCategories.WORLD) {
 
     override val baseKey: String
         get() = "${ConfigSystem.KEY_PREFIX}.module.voidEsp"

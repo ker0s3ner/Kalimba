@@ -56,7 +56,7 @@ import kotlin.random.Random
  *
  * Builds blocks to cover yourself.
  */
-object ModuleBlockIn : ClientModule("BlockIn", ModuleCategories.WORLD, disableOnQuit = true) {
+object ModuleBlockIn : ClientModule("BlockIn", ModuleCategories.CPVP, disableOnQuit = true) {
 
     private val blockPlacer = tree(BlockPlacer("Placer", this, Priority.NORMAL, ::slotFinder))
     private val disableOn by multiEnumChoice("DisableOn", enumSetAllOf<DisableOn>())

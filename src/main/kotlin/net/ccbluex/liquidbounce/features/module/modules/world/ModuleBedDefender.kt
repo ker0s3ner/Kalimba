@@ -50,7 +50,7 @@ import net.minecraft.world.level.block.BedBlock
 import net.minecraft.world.phys.AABB
 import kotlin.math.max
 
-object ModuleBedDefender : ClientModule("BedDefender", category = ModuleCategories.WORLD) {
+object ModuleBedDefender : ClientModule("BedDefender", category = ModuleCategories.CPVP) {
 
     private val maxLayers by int("MaxLayers", 1, 1..5)
     private val allowChests by boolean("AllowChests", false)

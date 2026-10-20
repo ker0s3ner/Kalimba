@@ -51,7 +51,7 @@ import java.util.IdentityHashMap
  *
  * Leaves traces behind players.
  */
-object ModuleBreadcrumbs : ClientModule("Breadcrumbs", ModuleCategories.RENDER, aliases = listOf("PlayerTrails")) {
+object ModuleBreadcrumbs : ClientModule("Breadcrumbs", ModuleCategories.WORLD, aliases = listOf("PlayerTrails")) {
 
     private val onlyOwn by boolean("OnlyOwn", true)
     private val color by color("Color", Color4b(70, 119, 255, 120))

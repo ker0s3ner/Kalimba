@@ -69,7 +69,7 @@ import kotlin.math.max
  * @author ccetl
  */
 @Suppress("TooManyFunctions")
-object ModulePacketMine : ClientModule("PacketMine", ModuleCategories.WORLD), BreakingProgress.Provider {
+object ModulePacketMine : ClientModule("PacketMine", ModuleCategories.PLAYER), BreakingProgress.Provider {
 
     val mode = modes(
         this,
@@ -423,6 +423,7 @@ object ModulePacketMine : ClientModule("PacketMine", ModuleCategories.WORLD), Br
     }
 
     fun setTarget(blockPos: BlockPos) {
+        if (!net.ccbluex.liquidbounce.features.kalimba.MiningGuard.permits()) return
         val state = blockPos.state
         val shouldTargetBlock = state != null && mode.activeMode.shouldTarget(blockPos, state)
         if (!shouldTargetBlock || !world.worldBorder.isWithinBounds(blockPos)) {

@@ -57,7 +57,7 @@ import kotlin.math.max
  *
  * Places blocks inside of liquid source blocks within range of you.
  */
-object ModuleLiquidFiller : ClientModule("LiquidFiller", ModuleCategories.WORLD) {
+object ModuleLiquidFiller : ClientModule("LiquidFiller", ModuleCategories.PLAYER) {
 
     private val placeIn by multiEnumChoice("PlaceIn", enumSetAllOf<PlaceIn>(), canBeNone = false)
     private val placeOrder by enumChoice("PlaceOrder", PlaceOrder.FURTHER_FIRST)

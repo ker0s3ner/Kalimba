@@ -305,6 +305,9 @@ object LiquidBounce : EventListener {
         // Register commands and modules
         CommandManager.registerInbuilt()
         ModuleManager.registerInbuilt()
+        // Touch the guards so their event handlers get registered
+        net.ccbluex.liquidbounce.features.kalimba.PvpGuard.running
+        net.ccbluex.liquidbounce.features.kalimba.MiningGuard.running
 
         AddonManager.registerCategories()
         AddonManager.initializeAddons()

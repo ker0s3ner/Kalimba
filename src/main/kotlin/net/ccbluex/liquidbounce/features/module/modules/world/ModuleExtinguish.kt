@@ -51,7 +51,7 @@ import net.minecraft.world.item.Items
  *
  * Automatically extinguishes yourself when you're burning.
  */
-object ModuleExtinguish: ClientModule("Extinguish", ModuleCategories.WORLD) {
+object ModuleExtinguish: ClientModule("Extinguish", ModuleCategories.PLAYER) {
 
     private val cooldown by float("Cooldown", 1.0F, 0.0F..20.0F, "s")
     private val notDuringCombat by boolean("NotDuringCombat", true)

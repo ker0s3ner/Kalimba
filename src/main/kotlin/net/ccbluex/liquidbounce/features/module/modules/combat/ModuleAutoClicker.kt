@@ -55,7 +55,7 @@ import net.minecraft.world.phys.EntityHitResult
  * Clicks automatically when holding down a mouse button.
  */
 
-object ModuleAutoClicker : ClientModule("AutoClicker", ModuleCategories.COMBAT, aliases = listOf("TriggerBot")) {
+object ModuleAutoClicker : ClientModule("AutoClicker", ModuleCategories.PVP, aliases = listOf("TriggerBot")) {
 
     object AttackButton : ToggleableValueGroup(this, "Attack", true) {
 
