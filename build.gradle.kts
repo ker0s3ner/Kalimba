@@ -320,7 +320,7 @@ tasks.withType<JavaCompile>().configureEach {
     // If Javadoc is generated, this must be specified in that task too.
     options.encoding = "UTF-8"
 
-    options.release = libs.versions.jdk.get().toInt()
+    options.release = 26
 }
 
 tasks.test {
@@ -391,14 +391,14 @@ java {
     withSourcesJar()
 
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(libs.versions.jdk.get().toInt()))
+        languageVersion.set(JavaLanguageVersion.of(27))
     }
 }
 
 kotlin {
     compilerOptions {
         suppressWarnings = true
-        jvmToolchain(libs.versions.jdk.get().toInt())
+        jvmToolchain(27)
         freeCompilerArgs.add("-Xcollection-literals")
         freeCompilerArgs.add("-Xcompanion-blocks-and-extensions")
     }
