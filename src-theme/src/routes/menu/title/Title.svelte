@@ -27,8 +27,8 @@
 
             if (clientUpdate.update) {
                 notification.set({
-                    title: `LiquidBounce ${clientUpdate.update.clientVersion} has been released!`,
-                    message: `Download it from liquidbounce.net!`,
+                    title: `Kalimba ${clientUpdate.update.clientVersion} is available`,
+                    message: `A new Kalimba client update is ready.`,
                     error: false,
                     delay: 99999999
                 });
@@ -67,7 +67,7 @@
                     <ChildButton title="Realms" icon="realms" {parentHovered}
                                  on:click={() => openScreen("multiplayer_realms")}/>
                 </MainButton>
-                <MainButton title="LiquidBounce" icon="liquidbounce" on:click={toggleButtons} index={2}/>
+                <MainButton title="Kalimba" icon="liquidbounce" on:click={toggleButtons} index={2}/>
                 <MainButton title="Options" icon="options" on:click={() => openScreen("options")} index={3}/>
             {:else if clientButtonsShown}
                 <MainButton title="Proxy Manager" icon="proxymanager" on:click={() => openScreen("proxymanager")}
