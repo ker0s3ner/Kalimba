@@ -1,7 +1,7 @@
 {
-  "name": "freebuff-client",
+  "name": "kalimba-client",
   "version": "1.0.0",
-  "description": "Minecraft utility client with base-hunting and module UI inspired by InertiaClient, RusherHack, and LiquidBounce/GrimClient",
+  "description": "Kalimba Minecraft utility client with base-hunting, modular utilities, and a warm wood-themed UI",
   "main": "dist/index.js",
   "scripts": {
     "build": "bun build src/client/index.ts --outdir dist",

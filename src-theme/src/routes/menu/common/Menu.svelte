@@ -2,6 +2,8 @@
     import Header from "./header/Header.svelte";
     import {fly} from "svelte/transition";
     import {onMount} from "svelte";
+    import {location} from "svelte-spa-router";
+    import BeachScene from "../title/BeachScene.svelte";
 
     const transitionDuration = 700; // TODO: suboptimal
 
@@ -15,6 +17,10 @@
 </script>
 
 <div class="menu">
+    {#if $location === "/title"}
+        <BeachScene/>
+    {/if}
+
     {#if ready}
         <div transition:fly|global={{duration: 700, y: -100}}>
             <Header/>
@@ -37,6 +43,8 @@
   }
 
   .menu-wrapper {
+    position: relative;
+    z-index: 1;
     flex: 1;
     display: flex;
     flex-direction: column;

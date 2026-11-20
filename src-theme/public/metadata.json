@@ -1,11 +1,11 @@
 {
-  "id": "liquidbounce",
-  "name": "LiquidBounce",
+  "id": "kalimba",
+  "name": "Kalimba",
   "version": "0.1.0",
-  "authors": ["CCBlueX"],
+  "authors": ["Kalimba contributors"],
   "colors": {
-    "Accent": "#4677ff",
-    "Tint": "#000000"
+    "Accent": "#d9923b",
+    "Tint": "#1e130b"
   },
   "screens": [
     "clickgui",

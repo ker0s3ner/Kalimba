@@ -2,6 +2,7 @@
     import MainButton from "./buttons/MainButton.svelte";
     import ChildButton from "./buttons/ChildButton.svelte";
     import ConfettiBackground from "./ConfettiBackground.svelte";
+    import KalimbaPlayer from "./KalimbaPlayer.svelte";
     import ButtonContainer from "../common/buttons/ButtonContainer.svelte";
     import IconTextButton from "../common/buttons/IconTextButton.svelte";
     import IconButton from "../common/buttons/IconButton.svelte";
@@ -78,6 +79,10 @@
             {/if}
         </div>
 
+        <div class="player-spot" transition:fly|global={{duration: 900, x: 120}}>
+            <KalimbaPlayer/>
+        </div>
+
         <div class="additional-buttons" transition:fly|global={{duration: 700, y: 100}}>
             <ButtonContainer>
                 <IconTextButton icon="icon-exit.svg" title="Exit" on:click={exitClient}/>
@@ -113,7 +118,7 @@
         flex: 1;
         display: grid;
         grid-template-areas:
-            "a ."
+            "a d"
             "b c";
         grid-template-rows: 1fr max-content;
         grid-template-columns: 1fr max-content;
@@ -124,6 +129,14 @@
         flex-direction: column;
         row-gap: 25px;
         grid-area: a;
+    }
+
+    .player-spot {
+        grid-area: d;
+        align-self: center;
+        justify-self: end;
+        margin-right: 1vw;
+        margin-bottom: -4vh;
     }
 
     .additional-buttons {

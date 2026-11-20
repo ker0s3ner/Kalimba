@@ -77,18 +77,21 @@
 
 <style lang="scss">
 
+  /* Island style: no boxes, just sunlit text with a soft shadow, fading from sand to sea */
   .module {
-    background-color: var(--arraylist-background-color);
     color: var(--arraylist-text-color);
     font-size: 14px;
-    border-radius: 4px 0 0 4px;
-    padding: 5px 8px;
-    border-left: solid 4px var(--arraylist-border-color);
+    padding: 1px 4px;
     width: max-content;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-shadow: 0 1px 6px color-mix(in srgb, black 70%, transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--sea-color) 10%, transparent));
+    border-right: solid 2px var(--arraylist-border-color);
   }
 
   .tag {
     color: var(--arraylist-tag-color);
+    font-weight: 500;
   }
 </style>

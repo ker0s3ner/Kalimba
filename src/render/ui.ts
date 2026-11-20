@@ -19,16 +19,17 @@ export class UI {
   createUIFramework() {
     // Create the main UI container
     const uiContainer = document.createElement('div');
-    uiContainer.id = 'freebuff-ui';
+    uiContainer.id = 'kalimba-ui';
     uiContainer.style.cssText = `
       position: fixed;
       bottom: 20px;
       left: 20px;
       width: 320px;
-      background: rgba(15, 15, 15, 0.8);
-      border-radius: 8px;
-      padding: 15px;
-      color: #fff;
+      background: linear-gradient(145deg, rgba(35, 23, 14, 0.96), rgba(19, 13, 9, 0.96));
+      border: 1px solid rgba(217, 146, 59, 0.55);
+      border-radius: 10px;
+      padding: 14px;
+      color: #f3e6d0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       z-index: 1000;
       backdrop-filter: blur(10px);
@@ -43,10 +44,11 @@ export class UI {
       padding-bottom: 8px;
       border-bottom: 1px solid #333;
     `;
-    title.textContent = 'Freebuff Client';
+    title.textContent = 'KALIMBA  /  UTILITY DECK';
 
     // Modules container
     const modulesDiv = document.createElement('div');
+    modulesDiv.className = 'modules';
     modulesDiv.style.cssText = `
       max-height: 200px;
       overflow-y: auto;
@@ -92,10 +94,11 @@ export class UI {
   }
 
   updateModuleUI(module: any) {
-    const toggle = document.querySelector(`[data-module="${module.name}"]`);
+    const moduleName = Array.from(this.modules.entries()).find(([, value]) => value === module)?.[0];
+    const toggle = document.querySelector(`[data-module="${moduleName}"]`);
     if (toggle) {
-      toggle.classList.toggle('active', module.isEnabled());
-      toggle.textContent = module.isEnabled() ? 'ON' : 'OFF';
+      toggle.classList.toggle('active', this.moduleIsEnabled(module));
+      toggle.textContent = this.moduleIsEnabled(module) ? 'ON' : 'OFF';
     }
   }
 
@@ -111,17 +114,21 @@ export class UI {
         <div style="margin: 5px 0;">
           <span class="module-toggle" data-module="${name}" 
                 style="cursor: pointer; user-select: none;">
-            ${name}: ${module.isEnabled() ? 'ON' : 'OFF'}
+            ${name}: ${this.moduleIsEnabled(module) ? 'ON' : 'OFF'}
           </span>
         </div>
       `)
       .join('');
 
     // Update the UI
-    const container = document.querySelector('#freebuff-ui .modules');
+    const container = document.querySelector('#kalimba-ui .modules');
     if (container) {
       container.innerHTML = entries;
     }
+  }
+
+  private moduleIsEnabled(module: any): boolean {
+    return typeof module.isEnabled === 'function' ? module.isEnabled() : Boolean(module.isEnabled);
   }
 
   setupRenderLoop() {

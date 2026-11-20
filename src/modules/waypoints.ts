@@ -4,6 +4,8 @@
  */
 
 export class Waypoints {
+  name = 'Waypoints';
+  private enabled = true;
   constructor() {
     this.waypoints = [];
   }
@@ -15,6 +17,15 @@ export class Waypoints {
 
   getAll() {
     return this.waypoints;
+  }
+
+  isEnabled() {
+    return this.enabled;
+  }
+
+  toggle() {
+    this.enabled = !this.enabled;
+    console.log(`Waypoints ${this.enabled ? 'enabled' : 'disabled'}`);
   }
 
   renderUI(ui: any) {

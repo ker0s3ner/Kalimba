@@ -5,6 +5,9 @@
  */
 
 export class BaseHunter {
+  name = 'Base Hunter';
+  private enabled = true;
+
   constructor() {
     this.suspiciousBlocks = new Set();
     this.chunkActivity = new Map();
@@ -15,6 +18,15 @@ export class BaseHunter {
     console.log('BaseHunter initialized');
     // Hook into chunk updates and block placements
     this.hookIntoGameEvents();
+  }
+
+  isEnabled() {
+    return this.enabled;
+  }
+
+  toggle() {
+    this.enabled = !this.enabled;
+    console.log(`Base Hunter ${this.enabled ? 'enabled' : 'disabled'}`);
   }
 
   hookIntoGameEvents() {
@@ -42,6 +54,7 @@ export class BaseHunter {
   }
 
   analyzeChunk(chunkData: any) {
+    if (!this.enabled || !chunkData?.blocks) return;
     // Analyze chunk for base indicators
     const indicators = {
       hasChests: false,
@@ -70,12 +83,12 @@ export class BaseHunter {
     }
 
     // Store chunk activity
-    this.chunkActivity.set(chunkData.x + ',' + chunkData.y, indicators);
+    this.chunkActivity.set(chunkData.x + ',' + (chunkData.z ?? chunkData.y), indicators);
     this.checkForBaseCandidate(chunkData);
   }
 
   checkForBaseCandidate(chunkData: any) {
-    const activity = this.chunkActivity.get(chunkData.x + ',' + chunkData.y);
+    const activity = this.chunkActivity.get(chunkData.x + ',' + (chunkData.z ?? chunkData.y));
     if (!activity) return;
 
     // A base candidate requires multiple indicators
@@ -102,4 +115,7 @@ export class BaseHunter {
   getBaseCandidates() {
     return this.baseCandidates;
   }
+
+  onBlockPlaced(_block: any) {}
+  onPlayerMove(_position: any) {}
 }

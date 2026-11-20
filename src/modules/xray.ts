@@ -4,21 +4,26 @@
  */
 
 export class XRay {
+  name = 'X-Ray';
   constructor() {
-    this.isEnabled = false;
+    this.enabled = false;
     this.targetBlocks = ['diamond_ore', 'gold_ore', 'iron_ore', 'coal_ore'];
     this.opacity = 0.4;
   }
 
   toggle() {
-    this.isEnabled = !this.isEnabled;
-    console.log(`X-Ray ${this.isEnabled ? 'enabled' : 'disabled'}`);
+    this.enabled = !this.enabled;
+    console.log(`X-Ray ${this.enabled ? 'enabled' : 'disabled'}`);
     // Apply shader/material changes when enabled/disabled
-    if (this.isEnabled) {
+    if (this.enabled) {
       this.applyXRayMaterial();
     } else {
       this.removeXRayMaterial();
     }
+  }
+
+  isEnabled() {
+    return this.enabled;
   }
 
   applyXRayMaterial() {
@@ -33,7 +38,7 @@ export class XRay {
   }
 
   onRender(renderEvent: any) {
-    if (!this.isEnabled) return;
+    if (!this.enabled) return;
     // Custom render logic to visualize through walls
   }
 }

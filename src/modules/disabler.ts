@@ -5,8 +5,9 @@
  */
 
 export class Disabler {
+  name = 'Disabler';
   constructor() {
-    this.isEnabled = false;
+    this.enabled = false;
     this.exploits = new Set();
   }
 
@@ -17,13 +18,17 @@ export class Disabler {
         : this.exploits.add(exploit);
       console.log(`Disabler ${exploit} ${this.exploits.has(exploit) ? 'enabled' : 'disabled'}`);
     } else {
-      this.isEnabled = !this.isEnabled;
-      console.log(`Disabler ${this.isEnabled ? 'enabled' : 'disabled'}`);
+      this.enabled = !this.enabled;
+      console.log(`Disabler ${this.enabled ? 'enabled' : 'disabled'}`);
     }
   }
 
+  isEnabled() {
+    return this.enabled;
+  }
+
   onMove(event: any) {
-    if (!this.isEnabled) return;
+    if (!this.enabled) return;
     // Apply movement adjustments to bypass anti-cheat
     // These techniques are fragile and may cause flags
     // Examples: step height manipulation, look smoothing, etc.

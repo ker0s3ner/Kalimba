@@ -4,6 +4,11 @@
  */
 
 export function initEvents(baseHunter: any) {
+  if (typeof world === 'undefined') {
+    console.warn('Kalimba events are waiting for a Minecraft host.');
+    return;
+  }
+
   // Listen for chunk updates
   world.on('chunk', (chunk: any) => {
     baseHunter.analyzeChunk(chunk);

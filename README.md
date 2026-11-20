@@ -52,7 +52,7 @@ as a build artifact; published releases get the jar attached.
 
 ## Theme
 
-The ClickGUI uses a warm wood palette (walnut surfaces, amber accents). Colours live in
+The ClickGUI and start menu use a warm wood palette (walnut surfaces, amber accents) under the Kalimba identity. Colours live in
 [`src-theme/src/colors.scss`](src-theme/src/colors.scss).
 
 ## License

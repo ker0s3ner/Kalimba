@@ -49,7 +49,7 @@ import java.util.function.IntSupplier;
 public abstract class MixinLoadingOverlay {
 
     @Unique
-    private static final IntSupplier CLIENT_ARGB = () -> ARGB.color(255, 24, 26, 27);
+    private static final IntSupplier CLIENT_ARGB = () -> ARGB.color(255, 30, 19, 11);
 
     @Inject(method = "registerTextures", at = @At("RETURN"))
     private static void initializeTexture(TextureManager textureManager, CallbackInfo ci) {

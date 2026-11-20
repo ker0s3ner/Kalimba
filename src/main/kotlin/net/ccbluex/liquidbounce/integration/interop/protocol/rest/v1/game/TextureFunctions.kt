@@ -37,11 +37,13 @@ import net.ccbluex.liquidbounce.integration.interop.serviceUnavailable
 import net.ccbluex.liquidbounce.render.atlas.AtlasLookup
 import net.ccbluex.liquidbounce.render.atlas.ItemImageAtlas
 import net.ccbluex.liquidbounce.utils.client.mc
-import net.ccbluex.liquidbounce.utils.client.world
 import net.minecraft.client.renderer.texture.DynamicTexture
 import net.minecraft.client.resources.DefaultPlayerSkin
 import net.minecraft.resources.Identifier
+import com.mojang.authlib.GameProfile
 import java.util.UUID
+import java.util.concurrent.CompletableFuture
+import java.util.concurrent.TimeUnit
 import kotlin.jvm.optionals.getOrNull
 
 // GET /api/v1/client/resource
@@ -102,7 +104,7 @@ private fun Route.getEffectTexture() = get("/effectTexture") {
 private fun Route.getSkin() = get("/skin") {
     val uuid = call.queryParameters["uuid"]?.let { UUID.fromString(it) }
         ?: call.badRequest("Missing UUID parameter")
-    val skinTextures = world.players().find { it.uuid == uuid }?.skin
+    val skinTextures = mc.level?.players()?.find { it.uuid == uuid }?.skin
         ?: DefaultPlayerSkin.get(uuid)
     val bodyTexturePath = skinTextures.body.texturePath()
     val texture = mc.textureManager.getTexture(bodyTexturePath)
@@ -118,9 +120,41 @@ private fun Route.getSkin() = get("/skin") {
     }
 }
 
+// GET /api/v1/client/resource/ownSkin
+//
+// The signed-in user's skin, usable before any world is loaded (title screen). The texture is read on the
+// render thread because Minecraft refuses to touch its texture manager from anywhere else.
+private fun Route.getOwnSkin() = get("/ownSkin") {
+    val user = mc.user
+    val skin = runCatching {
+        mc.skinManager.get(GameProfile(user.profileId, user.name)).get(5, TimeUnit.SECONDS).getOrNull()
+    }.getOrNull() ?: DefaultPlayerSkin.get(user.profileId)
+
+    val bytes = CompletableFuture<ByteArray?>()
+    mc.execute {
+        bytes.complete(runCatching {
+            val path = skin.body.texturePath()
+            val texture = mc.textureManager.getTexture(path)
+            if (texture is DynamicTexture && texture.pixels != null) {
+                java.io.ByteArrayOutputStream().also { out ->
+                    texture.pixels!!.writeToChannel(java.nio.channels.Channels.newChannel(out))
+                }.toByteArray()
+            } else {
+                mc.resourceManager.getResource(path).getOrNull()?.open()?.use { it.readAllBytes() }
+            }
+        }.getOrNull())
+    }
+
+    val png = bytes.get(5, TimeUnit.SECONDS) ?: call.internalServerError("Skin texture is not available")
+    call.response.header("X-Skin-Slim", (skin.model() == net.minecraft.world.entity.player.PlayerModelType.SLIM).toString())
+    call.response.header(HttpHeaders.AccessControlExposeHeaders, "X-Skin-Slim")
+    call.respondBytes(png, ContentType.Image.PNG)
+}
+
 internal fun Route.textureRoutes() = route("/resource") {
     getResource()
     getItemTexture()
     getEffectTexture()
     getSkin()
+    getOwnSkin()
 }

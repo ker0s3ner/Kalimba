@@ -1,20 +1,20 @@
 /**
- * Freebuff Minecraft Utility Client
+ * Kalimba Minecraft Utility Client
  * Base: InertiaClient (open-source Minecraft hacked client)
  * Base-hunting: RusherHack BaseFinder techniques
  * UI: GrimClient.pl / LiquidBounce design inspiration
  */
 
-import { getBaseHunter } from './modules/baseHunter';
-import { UI } from './render/ui';
-import { initEvents } from './client/events';
-import { XRay } from './modules/xray';
-import { Fly } from './modules/fly';
-import { Waypoints } from './modules/waypoints';
-import { Disabler } from './modules/disabler';
+import { BaseHunter } from '../modules/baseHunter';
+import { UI } from '../render/ui';
+import { initEvents } from './events';
+import { XRay } from '../modules/xray';
+import { Fly } from '../modules/fly';
+import { Waypoints } from '../modules/waypoints';
+import { Disabler } from '../modules/disabler';
 
 const client = {
-  name: 'Freebuff Client',
+  name: 'Kalimba Client',
   version: '1.0.0',
   baseClient: 'InertiaClient',
   modules: {},
@@ -23,9 +23,9 @@ const client = {
     console.log(`${this.name} v${this.version} initializing...`);
     console.log(`Base client: ${this.baseClient}`);
     this.ui = new UI();
-    initEvents(this.baseHunter);
-    this.baseHunter = new getBaseHunter();
+    this.baseHunter = new BaseHunter();
     this.baseHunter.init();
+    initEvents(this.baseHunter);
     
     // Initialize core modules
     this.xray = new XRay();
